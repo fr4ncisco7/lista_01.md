@@ -12,7 +12,11 @@ print(a)
 - Resolva as questões com uso do Visual Studio Code ou ambiente similar.
 - Teste seus códigos antes de trazer a resposta para cá.
 - Cuidado com o uso de ChatGPT (e similares), pois entregar algo só para ganhar nota não fará você aprender. Não seja dependente da máquina!
-- Ao final, publique seu arquivo lista_01.md com as respostas em seu repositório, e envie o link pela Adalove. 
+- Ao final, publique seu arquivo lista_01.md com as respostas em seu repositório, e envie o link pela Adalove.
+
+Nome:Francisco de Araijo Ferreira Filho
+
+obs:As setas ( <----------- ) representam a resposta que eu marquei.
 
 # Questões objetivas
 **1) Considerando a execução do código abaixo, indique a alternativa correta e justifique sua resposta.**
@@ -51,6 +55,7 @@ c) Substituir if (a || b === 0) por if (a && b === 0)
 
 d) Remover completamente a verificação if (a || b === 0)
 
+Resposta: O código apresentado não funciona. O código em questão, cujo intuito é analisar se a ou b é zero, tem sua versão correta apenas na alternativa A).
 ______
 **3) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
 ```javascript
@@ -235,3 +240,40 @@ ______
 - Uma classe `Livro` que herda de `Produto` e modifica o método `calcularDesconto()`, aplicando um desconto de 20% no preço dos livros.
 
 Explique como funciona a herança nesse contexto e como você implementaria a modificação do método na classe `Livro`.
+
+```javascript
+//Classe
+class Produtos { //Criando a classe pai
+    constructor(nome, preco){ //Atributos da classe / características
+        //Variáveis
+        this.nome = nome; 
+        this.preco = preco
+    }
+
+    calcularDesconto(){ //Método da classe pai para calcular o desconto
+        this.preco = this.preco * 0.9 //Calculando quanto fica o preço do produto com 10% de desconto
+        console.log('Parabenss Você ganhou 10% de desconto no seu', this.nome, '.Ele está custando R$', (this.preco).toFixed(2)) //Escrevendo na tela o resultado
+    }
+}
+
+//Classe
+class Livros extends Produtos { //Criando a classe 'livros' que está herdando os elementos da classe pai
+    constructor(nome, preco){
+        //Variáveis
+        super(nome, preco); //Puxando os atributos da classe pai
+
+    }
+
+    calcularDesconto(){ //Método para calcular o desconto
+        this.preco = this.preco * 0.8 //Calculando o desconto do livro
+        console.log('Parabenss você ganhou 20% de desconto no seu livro "', this.nome, '". Ele está custando R$', (this.preco ).toFixed(2))//Escrevendo na tela o resultado
+    }
+}
+var produto = new Produtos('mouse', 489.90) //Criando uma variável que recebe um novo produto
+var livro = new Livros('Macunaima', 150) //Criando uma variável que recebe um novo livro
+produto.calcularDesconto() //Chama a função calcular da classe produtos
+livro.calcularDesconto() //Chama a função calcular da classe livros
+
+```
+
+Resposta:  herança é um mecanismo que permite que uma classe (chamada de subclasse ou classe filha) herde características (atributos e métodos) de outra classe (chamada de superclasse ou classe pai).Nesse caso as subclasses herdam as caracteristicas da classe principal e depois ganham suas prorpias caracteristicas especificas.
