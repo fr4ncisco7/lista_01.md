@@ -34,6 +34,7 @@ c) A saída será undefined seguido de undefined
 
 d) A saída será erro em ambas as linhas que utilizam console.log
 
+Resposta:O primeiro console.log exibe undefined porque a variável está sendo definida após a chamada e, por ser uma variável definida com var (variável global), ela é exibida, mas ainda sem valor. O segundo console.log gera um erro porque a variável foi definida após a chamada e é declarada com let. O let impede a inicialização para evitar erros inesperados.
 
 **2) O seguinte código JavaScript tem um erro que impede sua execução correta. Analise e indique a opção que melhor corrige o problema. Justifique sua resposta.**
 
