@@ -135,13 +135,15 @@ I. A herança é utilizada para compartilhar métodos e propriedades entre class
 II. Em JavaScript, a herança é implementada através da palavra-chave `extends`.
 
 
-a) As duas afirmações são verdadeiras, e a segunda justifica a primeira.
+a) As duas afirmações são verdadeiras, e a segunda justifica a primeira. <--------------------------
 
 b) As duas afirmações são verdadeiras, mas a segunda não justifica a primeira.
 
 c) A primeira afirmação é verdadeira, e a segunda é falsa.
 
 d) A primeira afirmação é falsa, e a segunda é verdadeira.
+
+Resposta:A herança em JS permite que classes compartilhem métodos e propriedades, possibilitando a reutilização de código, evitando duplicações e facilitando a manutenção do código. Para que esse processo aconteça, é necessário usar o extends, como em: class ClasseFilha extends ClassePai. Sendo assim, essa segunda afirmação justifica a primeira, pois uma explica sobre a herança e a outra sobre como utilizar.
 ______
 **7) Dado o seguinte código. Indique a alternativa correta e justifique sua resposta.**
 
