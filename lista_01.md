@@ -22,7 +22,7 @@ var x = 5;
 console.log(y);
 let y = 10;
 ```
-a) A saída será undefined seguido de erro 
+A) saída será undefined seguido de erro     <--------------------------------------------------------
 
 b) A saída será 5 seguido de 10
 
@@ -43,7 +43,7 @@ function soma(a, b) {
 console.log(soma(2, 0));
 ```
 
-a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
+a) Substituir if (a || b === 0) por if (a === 0 || b === 0)    <------------------------------------------------
 
 b) Substituir if (a || b === 0) por if (a === 0 && b === 0)
 
@@ -76,13 +76,15 @@ function calcularPreco(tipo) {
 console.log(calcularPreco("eletrônico"));
 ```
 
-a) O código imprime 1000.
+a) O código imprime 1000. 
 
-b) O código imprime 200.
+b) O código imprime 200. <------------------------------------------------------
 
 c) O código imprime 50.
 
 d) O código gera um erro.
+
+Resposta: Neste programa, como o case "eletrônico" não tem break apos atribuir o valor 1000 a variável preço, que é a função de saída do case, o programa começa a entrar nos próximos cases, mesmo que o valor da função não corresponda ao valor do case. Assim, quando chega ao case "vestuário", o valor da variável "preço" é alterado para 200 e ocorre o break. Logo, o valor final é definido porque o programa sai dos cases. Tanto que, se testarmos retirando o break do case "vestuário", o valor do preço será definido no case "alimentação", resultando no valor de resposta 50.
 
 ______
 **4) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
@@ -99,7 +101,9 @@ b) 6
 
 c) 18
 
-d) 24
+d) 24 <--------------------------------
+
+Resposta: A lista numeros é criada com os números da sequência de 1 a 5 e, logo após isso, sofre algumas alterações. A primeira alteração é numeros.map(x => x * 2). Nessa função, todos os elementos da lista são multiplicados por dois, resultando em [2, 4, 6, 8, 10]. Na segunda função, filter(x => x > 5), esse comando remove todos os números da lista que são menores ou iguais a 5, resultando em uma nova lista: [6, 8, 10]. Por fim, a última função, reduce((a, b) => a + b, 0), funciona como uma soma dos termos com um acumulador. Inicialmente, 0 é adicionado a 'a' (6 + 0 = 6), resultando em 6 e atualizando o acumulador. O valor atual é somado com o próximo valor da lista (nesse caso, 8), resultando em 14, e o valor do acumulador é atualizado para 14. No fim, ele é adicionado ao último elemento, 10, resultando em 10 + 14 = 24.
 ______
 **5) Qual será o conteúdo do array lista após a execução do código? Indique a alternativa correta e justifique sua resposta.**
 
@@ -113,9 +117,11 @@ a) ["banana", "maçã", "uva", "abacaxi", "manga", "laranja"]
 
 b) ["banana", "abacaxi", "manga"]
 
-c) ["banana", "abacaxi", "manga", "laranja"]
+c) ["banana", "abacaxi", "manga", "laranja"]  <-----------------------------------------
 
 d) ["banana", "maçã", "uva", "abacaxi", "manga"]
+
+Resposta: A lista é criada com alguns nomes de frutas e, após isso, é usada a função splice(), que aponta os elementos e depois mostra o que irá substituí-los. Ou seja, ela basicamente diz: remova os elementos da lista nos índices 1 e 2 (como a lista inicia com 0, esses elementos serão 'maçã' e 'uva') e substitua por 'abacaxi' e 'manga'. O resultado será: ["banana", "abacaxi", "manga", "laranja"].
 ______
 **6) Abaixo há duas afirmações sobre herança em JavaScript. Indique a alternativa correta e justifique sua resposta**
 
@@ -165,13 +171,17 @@ III) O código não funciona corretamente, pois Funcionario não pode herdar de 
 
 Quais das seguintes afirmações são verdadeiras sobre o código acima?
 
-a) I e II são verdadeiras.
+a) I e II são verdadeiras. <-----------------------------------------------
 
 b) I, II e III são verdadeiras.
 
 c) Apenas II é verdadeira.
 
 d) Apenas I é verdadeira.
+
+Resposta: 
+1- verdadeiro, quando uma class herda os atributos de outra, ela pode usar esses atributos.
+2-Sim, isso se chama sobreposição de métodos. A classe funcionário tem uma função método igual a classe pai, na linha super.apresentar() dentro do método Funcionario garante que o método da classe pai seja executado antes de adicionar funcionalidades específicas de Funcionario.
 
 ______
 
@@ -182,11 +192,13 @@ ______
 
 a) A asserção é falsa e a razão é verdadeira.
 
-b) A asserção é verdadeira e a razão é falsa.
+b) A asserção é verdadeira e a razão é falsa. <-----------------------
 
 c) A asserção é verdadeira e a razão é verdadeira, mas a razão não explica a asserção.
 
 d) A asserção é verdadeira e a razão é verdadeira, e a razão explica a asserção.
+
+Resposta: O polimorfismo consiste em um mesmo método que pode ser implementado por classes diferentes de formas diferentes, mas possui o mesmo efeito.
 
 ______
 
@@ -194,15 +206,28 @@ ______
 9) O seguinte código deve retornar a soma do dobro dos números de um array, mas contém erros. Identifique os problema e corrija o código para que funcione corretamente. Adicione comentários ao código explicado sua solução para cada problema.
 
 ```javascript
+var lista = []
 function somaArray(numeros) {
 
-    for (i = 0; i < numeros.size; i++) {
-        soma = 2*numeros[i];
-    }
-    return soma;
-}
+    for (i = 0; i < numeros.length; i += 1) { //o Size é usado para saber a quantidade de elementos em um objeto, mas não é usado em listas
+                                             //para listas tem que usar o length
+                                             //Retirei o objeto soma porque ele não tinha utilizade
+
+        lista.push(numeros[i])//Estou criando um lista com todos os numeros
+        
+        
+    }//Aqui, teremos um acumulador que percorre todos os elementos da lista.
+    //Primeiro, o acumulador começa com 0 e é somado ao dobro do primeiro elemento da lista.
+    //Esse resultado se torna o novo valor do acumulador, e esse processo se repete para todos os elementos.
+    //Assim, teremos o exato resultado pedido para a questão, a soma do dobro dos números de um array.
+    resultado = lista.reduce((acumulador, numeros) => acumulador + (numeros*2), 0) //Essa função reduce reduz a lista a um único número
+    return resultado; 
+    
+};
 console.log(somaArray([1, 2, 3, 4]));
+
 ```
+
 ______
 10) Crie um exemplo prático no qual você tenha duas classes:
 
